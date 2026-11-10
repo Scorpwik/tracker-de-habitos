@@ -1,76 +1,61 @@
-# Tablero de Hábitos
+# Mis hábitos
 
-Aplicación web para registrar hábitos diarios con HTML, Bootstrap, JavaScript y Git/GitHub.
+Tablero web para anotar los hábitos del día, marcarlos cuando ya se cumplieron y ver cuántos faltan. Todo se guarda en el navegador: no hay cuentas ni servidor propio.
 
-## Funcionalidades
+**Demo:** [scorpwik.github.io/tracker-de-habitos](https://scorpwik.github.io/tracker-de-habitos/)
 
-- Agregar hábitos
-- Marcar como completados o pendientes
-- Eliminar hábitos
-- Guardar los datos en localStorage
-- Mostrar contadores de total, completadas y pendientes
+## Qué hace
+
+- Agregar un hábito desde el formulario. Si el texto queda vacío, no se guarda.
+- Marcarlo como hecho o dejarlo pendiente con un clic sobre la fila. El nombre se tacha cuando está hecho.
+- Eliminarlo con el botón **Eliminar**.
+- Ver tres contadores: **Total**, **Hechos** y **Faltan**.
+- Conservar la lista en `localStorage` (clave `habitos`) al recargar la página.
+- Acomodar el tablero en pantallas angostas: los contadores y el formulario se apilan.
 
 ## Tecnologías
 
 - HTML5
 - CSS3
-- Bootstrap 5
-- JavaScript ES6+
-- Git + GitHub
+- [Bootstrap 5.3](https://getbootstrap.com/) (hoja de estilos por CDN)
+- JavaScript (ES6+): funciones flecha, desestructuración, render del DOM y un solo listener por delegación en la lista
+- Git y GitHub
+
+## Cómo ejecutarlo en local
+
+Hace falta un navegador actual. No hay dependencias ni paso de instalación.
+
+```bash
+git clone https://github.com/Scorpwik/tracker-de-habitos.git
+cd tracker-de-habitos
+```
+
+Abrir `index.html` en el navegador.
+
+Si se prefiere un servidor estático:
+
+```bash
+python3 -m http.server 8000
+```
+
+Luego entrar a [http://localhost:8000](http://localhost:8000).
+
+En VS Code, Live Server puede usar el puerto `5501` definido en `.vscode/settings.json`.
 
 ## Estructura
 
 ```text
-TrackerDeHabiitos/
-├── index.html
-├── style.css
-├── app.js
+tracker-de-habitos/
+├── index.html    # marcado de la página
+├── style.css     # tablero y diseño adaptable
+├── app.js        # hábitos, contadores y localStorage
 ├── README.md
+└── .vscode/
+    └── settings.json
 ```
 
-## Requisitos
-
-- Navegador moderno
-- Git instalado
-- Cuenta en GitHub (opcional para subir el proyecto)
-
-## Demo en GitHub Pages
-
-https://scorpwik.github.io/TrackerDeHabiitos/
-
-## Cómo ejecutar
-
-1. Abrir `index.html` en el navegador.
-2. O, si se desea usar un servidor local:
-
-```bash
-python -m http.server 8000
-```
-
-Luego abrir:
-
-```text
-http://localhost:8000
-```
-
-## Cumplimiento del entregable
-
-Este proyecto incluye:
-
-- estructura HTML/Bootstrap responsiva
-- arreglo de objetos en JavaScript
-- uso de arrow functions y destructuring
-- renderizado dinámico del DOM
-- delegación de eventos con un solo listener
-- persistencia con localStorage
-- historial de ramas y commits en Git
-
-## Ramas importantes
-
-- `main`: versión base del entregable
-- `feature/readme`: documentación del proyecto
-- `feature/contadores`: funcionalidad de estadísticos
+Las hojas y el script se enlazan con rutas relativas (`style.css`, `app.js`), así el sitio publicado en GitHub Pages resuelve bien bajo `/tracker-de-habitos/`.
 
 ## Autor
 
-Proyecto desarrollado para el entregable de Desarrollo Web 2.
+Joshua Lozada — [Scorpwik](https://github.com/Scorpwik)
